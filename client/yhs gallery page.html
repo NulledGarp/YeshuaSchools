@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Gallery - Yeshua High School</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .hero-section {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        
+        .mission-card:hover, .value-card:hover {
+            transform: translateY(-5px);
+            transition: transform 0.3s ease;
+        }
+        
+        .timeline-item {
+            position: relative;
+            padding-left: 30px;
+        }
+        
+        .timeline-item:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: #3b82f6;
+        }
+        
+        .timeline-item:after {
+            content: '';
+            position: absolute;
+            left: 7px;
+            top: 15px;
+            width: 1px;
+            height: 100%;
+            background: #cbd5e1;
+        }
+        
+        .timeline-item:last-child:after {
+            display: none;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased">
+
+    <!-- Simple Header -->
+    <header class="bg-red-400 text-white shadow-lg py-6">
+        <div class="container mx-auto px-4 text-center"> <a href="Yhs.html"><img src="images-removebg-preview.png" width="50" height="50" alt="Yeshua High Logo"></a>
+            <h1 class="text-3xl font-bold"><a href="Yhs.html"> Gallery Section</a></h1>
+        </div>
+    </header>
+
+    <!-- Gallery Section -->
+    <div id="gallery" class="py-12 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-8">Our School Gallery</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                
+                <!-- Gallery Items -->
+
+                <div>
+                    <img src="1.webp" class="w-full h-48 object-cover rounded-lg shadow-md hover:shadow-xl transition-shadow"">
+                </div>
+                
+                <div>
+                    <img src="2.webp" class="w-full h-48 object-cover rounded-lg shadow-md hover:shadow-xl transition-shadow"">
+                </div>
+                
+                <div>
+                    <img src="3.webp" class="w-full h-48 object-cover rounded-lg shadow-md hover:shadow-xl transition-shadow"">
+                </div>
+                
+               <div>
+                    <img src="4.webp" class="w-full h-48 object-cover rounded-lg shadow-md hover:shadow-xl transition-shadow"">
+                </div>
+                
+               <div>
+                    <img src="5.webp" class="w-full h-48 object-cover rounded-lg shadow-md hover:shadow-xl transition-shadow"">
+                </div>
+                
+               <div>
+                    <img src="6.webp" class="w-full h-48 object-cover rounded-lg shadow-md hover:shadow-xl transition-shadow"">
+                </div>
+
+                <div>
+                    <img src="7.webp" class="w-full h-48 object-cover rounded-lg shadow-md hover:shadow-xl transition-shadow"">
+                </div>
+                
+                <div>
+                    <img src="8.webp" class="w-full h-48 object-cover rounded-lg shadow-md hover:shadow-xl transition-shadow"">
+                </div>
+
+                <div>
+                    <img src="9.webp" class="w-full h-48 object-cover rounded-lg shadow-md hover:shadow-xl transition-shadow"">
+                </div>
+
+                <div>
+                    <img src="10.webp" class="w-full h-48 object-cover rounded-lg shadow-md hover:shadow-xl transition-shadow"">
+                </div>
+
+                <div>
+                    <img src="11.webp" class="w-full h-48 object-cover rounded-lg shadow-md hover:shadow-xl transition-shadow"">
+                </div>
+
+                <div>
+                    <img src="12.webp" class="w-full h-48 object-cover rounded-lg shadow-md hover:shadow-xl transition-shadow"">
+                </div>
+            </div>
+            
+            <div class="text-center mt-8">
+                <button class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-6 rounded-full transition-colors">
+                    View Full Gallery <i class="fas fa-images ml-2"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Simple Footer -->
+    <footer class="bg-gray-800 text-white py-6">
+        <div class="container mx-auto px-4 text-center text-sm">
+            <p>Copyright © 2025 All rights reserved</p>
+        </div>
+    </footer>
+
+</body>
+</html>

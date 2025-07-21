@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Preloader</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @keyframes bookFlip {
+            0%, 100% { transform: rotateY(0deg); }
+            50% { transform: rotateY(180deg); }
+        }
+        
+        @keyframes pencilWrite {
+            0% { transform: translateX(0) rotate(0deg); }
+            25% { transform: translateX(20px) rotate(5deg); }
+            50% { transform: translateX(40px) rotate(0deg); }
+            75% { transform: translateX(20px) rotate(-5deg); }
+            100% { transform: translateX(0) rotate(0deg); }
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .book-animation {
+            animation: bookFlip 3s infinite ease-in-out;
+            transform-style: preserve-3d;
+        }
+        
+        .pencil-animation {
+            animation: pencilWrite 2s infinite ease-in-out;
+        }
+        
+        .fade-in {
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        
+        .progress-bar {
+            transition: width 0.3s ease;
+        }
+    </style>
+</head>
+<body class="bg-red-50 min-h-screen flex flex-col items-center justify-center overflow-hidden">
+    <div id="preloader" class="w-full h-full fixed top-0 left-0 bg-white z-50 flex flex-col items-center justify-center">
+        <div class="relative w-64 h-64 mb-8">
+            <!-- School logo placeholder -->
+            <div class="absolute inset-0 flex items-center justify-center">
+                <div class="w-24 h-24 bg-red-100 rounded-full flex items-center justify-center shadow-lg">
+                    <i class="fas fa-school text-red-500 text-4xl"></i>
+                </div>
+            </div>
+            
+            <!-- Animated books -->
+            <div class="absolute top-8 left-8 w-12 h-16 bg-red-400 rounded-sm shadow-lg book-animation" style="animation-delay: 0.2s;"></div>
+            <div class="absolute top-12 left-20 w-12 h-16 bg-yellow-400 rounded-sm shadow-lg book-animation" style="animation-delay: 0.4s;"></div>
+            <div class="absolute top-16 left-32 w-12 h-16 bg-green-400 rounded-sm shadow-lg book-animation" style="animation-delay: 0.6s;"></div>
+            
+            <!-- Animated pencil -->
+            <div class="absolute bottom-12 right-12 pencil-animation">
+                <div class="w-16 h-3 bg-yellow-500 rounded-full relative">
+                    <div class="absolute -right-1 top-0 w-2 h-3 bg-gray-700"></div>
+                    <div class="absolute -right-3 top-1 w-1 h-1 bg-pink-500 rotate-45"></div>
+                </div>
+            </div>
+        </div>
+        
+        <h1 class="text-3xl font-bold text-gray-800 mb-2 fade-in">Welcome to <span class="text-red-600">Yeshua High School</span></h1>
+        <p class="text-gray-600 mb-6 fade-in" style="animation-delay: 0.3s;">Loading school resources...</p>
+        
+        <div class="w-64 h-2 bg-gray-200 rounded-full overflow-hidden mb-4">
+            <div id="progress" class="h-full bg-gradient-to-r from-blue-400 to-red-600 progress-bar" style="width: 0%"></div>
+        </div>
+        
+        <div class="flex space-x-2">
+            <div class="w-3 h-3 rounded-full bg-red-400 animate-bounce" style="animation-delay: 0.1s;"></div>
+            <div class="w-3 h-3 rounded-full bg-red-500 animate-bounce" style="animation-delay: 0.2s;"></div>
+            <div class="w-3 h-3 rounded-full bg-red-600 animate-bounce" style="animation-delay: 0.3s;"></div>
+        </div>
+    </div>
+
+    <div id="content" class="hidden p-8 max-w-4xl mx-auto text-center">
+        <img src="images-removebg-preview.png" width="70" height="70" alt="Yeshua High Logo">
+        <h1 class="text-4xl font-bold text-red-800 mb-4">Welcome to Yeshua High School</h1>
+        <p class="text-lg text-gray-700 mb-8"> We are one of the leading Christian co-educational secondary schools in Nigeria, <br> focused on making education fun and practical for our students.</p>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+            <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                <i class="fas fa-graduation-cap text-blue-500 text-4xl mb-4"></i>
+                <h3 class="text-xl font-semibold mb-2">Academic Excellence</h3>
+                <p class="text-gray-600">Our curriculum is designed to challenge and inspire students to reach their full potential.</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                <i class="fas fa-futbol text-green-500 text-4xl mb-4"></i>
+                <h3 class="text-xl font-semibold mb-2">Sports & Arts</h3>
+                <p class="text-gray-600">We nurture talents beyond academics with state-of-the-art facilities for sports and arts.</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                <i class="fas fa-users text-yellow-500 text-4xl mb-4"></i>
+                <h3 class="text-xl font-semibold mb-2">Community</h3>
+                <p class="text-gray-600">Join our vibrant community of learners, educators, and parents working together.</p>
+            </div>
+        </div>
+        
+        <button class="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-6 rounded-full transition-colors">
+            <a href="Yhs.html">Explore Our School <i class="fas fa-arrow-right ml-2"></i></a>
+        </button>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Simulate loading progress
+            let progress = 0;
+            const progressBar = document.getElementById('progress');
+            const preloader = document.getElementById('preloader');
+            const content = document.getElementById('content');
+            
+            const interval = setInterval(() => {
+                progress += Math.random() * 10;
+                if (progress > 100) progress = 100;
+                progressBar.style.width = `${progress}%`;
+                
+                if (progress >= 100) {
+                    clearInterval(interval);
+                    setTimeout(() => {
+                        preloader.style.opacity = '0';
+                        setTimeout(() => {
+                            preloader.style.display = 'none';
+                            content.classList.remove('hidden');
+                            content.classList.add('fade-in');
+                        }, 500);
+                    }, 500);
+                }
+            }, 300);
+            
+            // Add some random elements to make it more dynamic
+            setTimeout(() => {
+                const tips = [
+                    "Did you know? Regular study breaks improve retention.",
+                    "Tip: Organize your notes by color for better recall.",
+                    "Fun fact: The world's oldest school is over 1,400 years old!",
+                    "Reminder: Drink water to stay focused during study sessions."
+                ];
+                const randomTip = tips[Math.floor(Math.random() * tips.length)];
+                const tipElement = document.createElement('p');
+                tipElement.className = 'text-sm text-gray-500 italic mt-4 fade-in';
+                tipElement.style.animationDelay = '0.5s';
+                tipElement.textContent = randomTip;
+                preloader.appendChild(tipElement);
+            }, 1500);
+        });
+    </script>
+</body>
+</html>
