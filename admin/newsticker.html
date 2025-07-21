@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin - News Ticker</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans antialiased">
+
+  <!-- Header -->
+  <header class="bg-red-400 text-white p-4 shadow-md flex justify-between items-center">
+    <div class="flex items-center space-x-3">
+      <img src="assets/Logo.png" alt="YHS Logo" class="w-10 h-10 rounded bg-white p-1">
+      <h1 class="text-xl font-bold">YHS Admin Dashboard</h1>
+    </div>
+    <button onclick="logout()" class="bg-white text-red-500 px-4 py-1 rounded font-semibold hover:bg-red-100 transition">
+      <i class="fas fa-sign-out-alt mr-1"></i> Logout
+    </button>
+  </header>
+  
+  <div class="flex">
+    <!-- Sidebar -->
+    <nav class="w-56 bg-white h-screen shadow-md p-6 space-y-4 sticky top-0">
+      <a href="adminboard.html" class="flex items-center text-gray-700 hover:text-red-500">
+        <i class="fas fa-home mr-2"></i> Dashboard
+      </a>
+      <a href="adevents.html" class="flex items-center text-gray-700 hover:text-red-500">
+        <i class="fas fa-calendar mr-2"></i> Events
+      </a>
+      <a href="newsticker.html" class="flex items-center text-red-500 font-semibold">
+        <i class="fas fa-newspaper mr-2"></i> News Ticker
+      </a>
+
+    </nav>
+
+    <!-- Main Content -->
+    <main class="flex-1 p-10 min-h-screen">
+      <h2 class="text-2xl font-bold mb-6 text-gray-700">News Ticker Management</h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Add News Item Panel -->
+        <section class="bg-white shadow-md rounded-xl p-6">
+          <h3 class="text-lg font-bold mb-4 text-gray-700">Add News Ticker Item</h3>
+          <form id="addNewsForm" class="space-y-4">
+            <input type="text" name="news" placeholder="News ticker text"
+                   class="w-full border border-gray-300 px-3 py-2 rounded focus:outline-none focus:ring-2 focus:ring-red-300" required />
+            <button type="submit"
+                    class="w-full bg-red-400 text-white py-2 rounded font-semibold hover:bg-red-500 transition">
+              <i class="fas fa-plus mr-1"></i> Add News Item
+            </button>
+          </form>
+        </section>
+
+        <!-- News List -->
+        <section class="bg-white shadow-md rounded-xl p-6">
+          <h3 class="text-lg font-bold mb-4 text-gray-700">Current News Ticker</h3>
+          <div id="newsList" class="space-y-3 text-sm">
+            <p class="text-gray-500">Loading...</p>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    // Dummy local storage for demonstration
+    let newsItems = JSON.parse(localStorage.getItem('newsItems') || '[]');
+
+    function renderNewsList() {
+      const list = document.getElementById('newsList');
+      list.innerHTML = '';
+      if (!newsItems.length) {
+        list.innerHTML = '<p class="text-gray-500">No news items yet.</p>';
+        return;
+      }
+      newsItems.forEach((item, idx) => {
+        const div = document.createElement('div');
+        div.className = "flex items-center justify-between bg-gray-50 p-3 rounded hover:bg-gray-100 transition";
+        div.innerHTML = `
+          <span>${item}</span>
+          <div class="space-x-2">
+            <button onclick="editNewsItem(${idx})" class="text-blue-500 hover:text-blue-700"><i class="fas fa-edit"></i></button>
+            <button onclick="deleteNewsItem(${idx})" class="text-red-500 hover:text-red-700"><i class="fas fa-trash"></i></button>
+          </div>
+        `;
+        list.appendChild(div);
+      });
+    }
+
+    document.getElementById('addNewsForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const newsText = this.news.value.trim();
+      if (newsText) {
+        newsItems.push(newsText);
+        localStorage.setItem('newsItems', JSON.stringify(newsItems));
+        renderNewsList();
+        this.reset();
+      }
+    });
+
+    window.editNewsItem = function(idx) {
+      const newText = prompt('Edit news item:', newsItems[idx]);
+      if (newText !== null && newText.trim() !== '') {
+        newsItems[idx] = newText.trim();
+        localStorage.setItem('newsItems', JSON.stringify(newsItems));
+        renderNewsList();
+      }
+    }
+
+    window.deleteNewsItem = function(idx) {
+      if (confirm('Delete this news item?')) {
+        newsItems.splice(idx, 1);
+        localStorage.setItem('newsItems', JSON.stringify(newsItems));
+        renderNewsList();
+      }
+    }
+
+    // Initial render
+    renderNewsList();
+
+    // Dummy logout
+    function logout() {
+      // Implement your session clearing logic here
+      window.location.href = "login.html";
+    }
+  </script>
+</body>
+</html>
