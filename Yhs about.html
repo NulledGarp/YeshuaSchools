@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Our School - Yeshua High School</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .hero-section {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        
+        .mission-card:hover, .value-card:hover {
+            transform: translateY(-5px);
+            transition: transform 0.3s ease;
+        }
+        
+        .timeline-item {
+            position: relative;
+            padding-left: 30px;
+        }
+        
+        .timeline-item:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: red;
+        }
+        
+        .timeline-item:after {
+            content: '';
+            position: absolute;
+            left: 7px;
+            top: 15px;
+            width: 1px;
+            height: 100%;
+            background: #cbd5e1;
+        }
+        
+        .timeline-item:last-child:after {
+            display: none;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased">
+    <!-- Navigation -->
+    <nav class="bg-red-500 text-white shadow-lg">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <a href="#home" class="text-xl font-bold">Yeshua High School</a>
+            </div>
+            <div class="hidden md:flex space-x-6">
+                <a href="Yhs.html" class="hover:text-red-200">Home</a>
+                <a href="Yhs about.html" class="font-semibold underline">About</a>
+                <a href="#" class="hover:text-red-200">Academics</a>
+                <a href="#" class="hover:text-red-200">Admissions</a>
+                <a href="#" class="hover:text-red-200">Contact</a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-red-700 px-4 pb-4">
+            <a href="Yhs.html" class="block py-2 hover:text-red-200">Home</a>
+            <a href="Yhs about.html" class="block py-2 font-semibold">About</a>
+            <a href="yhs gallery page.html" class="block py-2 hover:text-red-200">Gallery</a>
+            <a href="#" class="block py-2 hover:text-red-200">Academics</a>
+            <a href="#" class="block py-2 hover:text-red-200">Admissions</a>
+            <a href="#" class="block py-2 hover:text-red-200">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section text-white py-20">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">@ Yeshua High School</h1>
+            <p class="text-xl md:text-2xl max-w-3xl mx-auto">Shaping minds, building character, and creating future leaders since 2005.</p>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center gap-8">
+                <div class="md:w-1/2">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-6">Our Story</h2>
+                    <div class="text-gray-600 space-y-4">
+                        <p>Founded in 2005 with just 120 students, Yeshua High School has grown into one of the region's most prestigious educational institutions, serving over 700 students from preschool through high school.</p>
+                        <p>Our founder, Mrs Simisola Adigun, envisioned a school that would combine academic excellence with character development. Today, we continue to uphold his vision while adapting to prepare students for the challenges of the 21st century.</p>
+                        <p>Our 25-acre campus features state-of-the-art facilities, including science and technology labs, performance arts spaces, and athletic complexes that support our comprehensive educational approach.</p>
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <div class="relative rounded-xl overflow-hidden shadow-xl">
+                        <img src="https://images.unsplash.com/photo-1588072432836-e10032774350?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1472&q=80" alt="Bright Future Academy Campus" class="w-full h-auto">
+                        <div class="absolute top-0 left-0 w-full h-full bg-black opacity-0 hover:opacity-20 transition-opacity duration-300"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission & Values -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Our Mission, Vision & Values</h2>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="mission-card bg-gray-50 p-8 rounded-xl shadow-lg">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-red-100 p-3 rounded-full mr-4">
+                            <i class="fas fa-bullseye text-red-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800">Our Mission</h3>
+                    </div>
+                    <p class="text-gray-600 max-w-2xl mx-auto">To help our students discover and fulfill God's purpose for their lives.</p>
+                </div>
+
+                <div class="mission-card bg-gray-50 p-8 rounded-xl shadow-lg">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-red-100 p-3 rounded-full mr-4">
+                            <i class="fas fa-bullseye text-red-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800">Our Vision</h3>
+                    </div>
+                    <p class="text-gray-600"> To be an institution that will be rated amongst the best in Nigeria, Africa and the World at large in terms of Godliness, Academic Excellence and Entrepreneurship. </p>
+                </div>
+                
+                <div class="value-card bg-gray-50 p-8 rounded-xl shadow-lg">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-green-100 p-3 rounded-full mr-4">
+                            <i class="fas fa-heart text-green-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800">Core Values</h3>
+                    </div>
+                    <ul class="text-gray-600 space-y-2 pl-4">
+                        <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i>Integrity in all endeavors</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i>Respect for self and others</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i>Commitment to excellence</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i>Joy in learning and discovery</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i>Responsibility to community</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline -->
+    <section class="py-16 bg-red-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-gray-800 mb-12 text-center">Our Journey Through Time</h2>
+            <div class="max-w-3xl mx-auto">
+                <div class="space-y-8">
+                    <div class="timeline-item">
+                        <div class="bg-white p-6 rounded-lg shadow">
+                            <h3 class="text-xl font-bold text-red-600 mb-2">2005</h3>
+                            <p class="text-gray-600">Yeshua High School opens its doors with 120 students in grades K-5. The school is founded by Mrs Simisola Adigun, a visionary educator.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="bg-white p-6 rounded-lg shadow">
+                            <h3 class="text-xl font-bold text-red-600 mb-2">2010</h3>
+                            <p class="text-gray-600">The school expands to include middle school grades, responding to community demand for continued quality education.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="bg-white p-6 rounded-lg shadow">
+                            <h3 class="text-xl font-bold text-red-600 mb-2">2015</h3>
+                            <p class="text-gray-600">High school division is added, completing the K-12 program. Our first senior class graduates in 2005.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="bg-white p-6 rounded-lg shadow">
+                            <h3 class="text-xl font-bold text-red-600 mb-2">2020</h3>
+                            <p class="text-gray-600">State-of-the-art science and technology center opens, featuring labs, makerspaces, and innovation studios.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="bg-white p-6 rounded-lg shadow">
+                            <h3 class="text-xl font-bold text-red-600 mb-2">2025</h3>
+                            <p class="text-gray-600">Yeshua High School is recognized as a National red Ribbon School for academic excellence.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leadership -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-gray-800 mb-12 text-center">Meet Our Leadership</h2>
+            <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-8">
+                <div class="bg-gray-50 rounded-xl overflow-hidden shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Pastor Tunji Adigun" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800">Pastor Tunji Adigun</h3>
+                        <p class="text-red-600 mb-3">Chairman</p>
+                        <p class="text-gray-600">With 22 years of educational leadership experience, Mrs Adigun leads our school with passion and vision.</p>
+                    </div>
+                </div>
+                <div class="bg-gray-50 rounded-xl overflow-hidden shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=761&q=80" alt="Mrs Simisola Adigun" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800">Mrs Simisola Adigun</h3>
+                        <p class="text-red-600 mb-3"> Executive Director</p>
+                        <p class="text-gray-600">With 22 years of educational leadership experience, Mrs Adigun leads our school with passion and vision.</p>
+                    </div>
+                </div>
+                <div class="bg-gray-50 rounded-xl overflow-hidden shadow-lg">
+                    <img src="Director Picture.webp" alt="Pastor Timilehin Adigun">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800">Pastor Timilehin Adigun</h3>
+                        <p class="text-red-600 mb-3">Director</p>
+                        <p class="text-gray-600">An expert in curriculum development, Pastor Timilehin ensures our academic programs remain rigorous and relevant.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="py-16 bg-red-600 text-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-12 text-center">By The Numbers</h2>
+            <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div class="bg-red-700 p-6 rounded-lg">
+                    <div class="text-4xl font-bold mb-2">450</div>
+                    <div class="text-lg">Active Students</div>
+                </div>
+                <div class="bg-red-700 p-6 rounded-lg">
+                    <div class="text-4xl font-bold mb-2">98%</div>
+                    <div class="text-lg">College Acceptance Rate</div>
+                </div>
+                <div class="bg-red-700 p-6 rounded-lg">
+                    <div class="text-4xl font-bold mb-2">210</div>
+                    <div class="text-lg">Teaching/Non-Teaching Staffs</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6">Ready to Join Our Community?</h2>
+            <p class="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">Discover how Yeshua High School can help your child unlock their potential.</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#" class="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300 shadow-lg">
+                    Schedule a Tour <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+                <a href="#" class="bg-white hover:bg-gray-100 text-red-600 font-bold py-3 px-6 rounded-lg border border-red-600 transition duration-300 shadow-lg">
+                    Apply Now <i class="fas fa-file-alt ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white">
+        <div class="container mx-auto px-4 py-12">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Yeshua High School</h3>
+                    <p class="text-gray-400">7/9 Jide Sekoni Street, Behind Addide,<br>Sabo-Ojodu, Lagos, Nigeria.</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="Yhs.html" class="text-gray-400 hover:text-white">Home</a></li>
+                        <li><a href="Yhs about.html" class="text-gray-400 hover:text-white">About Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Academics</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Admissions</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Contact</h4>
+                    <ul class="space-y-2">
+                        <li class="flex items-center"><i class="fas fa-phone-alt mr-2 text-sm"></i> ...............</li>
+                        <li class="flex items-center"><i class="fas fa-envelope mr-2 text-sm"></i> .................</li>
+                        <li class="flex items-center"><i class="fas fa-clock mr-2 text-sm"></i> Mon-Fri: 8AM - 5PM</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Follow Us</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook-f text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter text-xl"></i></a>
+                        <a href="https://www.instagram.com/yeshuahigh?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" class="text-gray-400 hover:text-white"><i class="fab fa-instagram text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-linkedin-in text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-youtube text-xl"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="border-gray-700 my-8">
+            <div class="text-center text-gray-400">
+                <p>Copyright © 2025 All rights reserved</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Simple animation for statistics
+        function animateValue(id, start, end, duration) {
+            const obj = document.getElementById(id);
+            let startTimestamp = null;
+            const step = (timestamp) => {
+                if (!startTimestamp) startTimestamp = timestamp;
+                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                obj.innerHTML = Math.floor(progress * (end - start) + start);
+                if (progress < 1) {
+                    window.requestAnimationFrame(step);
+                }
+            };
+            window.requestAnimationFrame(step);
+        }
+
+        // Animate stats when they come into view
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const stats = entry.target.querySelectorAll('.text-4xl');
+                    stats.forEach(stat => {
+                        const value = Number(stat.textContent.replace(',', '').replace('%', ''));
+                        const id = 'stat-' + Math.random().toString(36).substr(2, 9);
+                        stat.id = id;
+                        stat.textContent = '0';
+                        animateValue(id, 0, value, 2000);
+                    });
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {threshold: 0.5});
+
+        const statsSection = document.querySelector('section.bg-red-600');
+        if (statsSection) {
+            observer.observe(statsSection);
+        }
+    </script>
+</body>
+</html>
