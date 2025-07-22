@@ -1,7 +1,7 @@
 const sqlite3 = require("sqlite3").verbose();
 const db = new sqlite3.Database("./chat.db");
 
-// Create tables if not exist
+// Create tables if = exist it doesnt
 db.serialize(() => {
   db.run(`
     CREATE TABLE IF NOT EXISTS users (
