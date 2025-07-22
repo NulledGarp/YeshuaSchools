@@ -1,0 +1,15 @@
+CREATE TABLE users (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  username TEXT NOT NULL,
+  role TEXT NOT NULL,
+  socket_id TEXT,
+  connected_at DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE messages (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  sender TEXT,
+  recipient TEXT,
+  message TEXT,
+  timestamp DATETIME DEFAULT CURRENT_TIMESTAMP
+);
